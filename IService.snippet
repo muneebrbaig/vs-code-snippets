@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>IService</Title>
+      <Shortcut>isvc</Shortcut>
+      <Description>Code snippet for IService</Description>
+      <Author>Muneeb R. Baig</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>name</ID>
+          <ToolTip>Class name</ToolTip>
+          <Default>IService</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+using SMIS.Entities.Models;
+
+namespace SMIS.Service;
+
+public interface I$name$Service : IService<$name$>
+{
+		$selected$$end$
+	}]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

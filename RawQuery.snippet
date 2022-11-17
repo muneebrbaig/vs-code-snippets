@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Raw Query</Title>
+      <Shortcut>rq</Shortcut>
+      <Description>Code snippet for Raw Query</Description>
+      <Author>Muneeb R. Baig</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>name</ID>
+          <ToolTip>Class name</ToolTip>
+          <Default>RawQueryDTO</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+        var query = "$selected$";
+var dal = new RawQuery<$name$>(DataContext);
+		var result = await dal.Query(query).ToListAsync();
+		return result; 
+		$end$
+    ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

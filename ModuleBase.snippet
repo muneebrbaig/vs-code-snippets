@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Module Base</Title>
+      <Shortcut>modbase</Shortcut>
+      <Description>Code snippet for Module Base</Description>
+      <Author>Muneeb R. Baig</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>name</ID>
+          <ToolTip>Class name</ToolTip>
+          <Default>ModuleBase</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using SMIS.Entities.DTOs;
+using SMIS.Entities.Models;
+using SMIS.Service;
+
+namespace SMIS.Core;
+
+public abstract class $name$ModuleBase : IDisposable
+{
+	public I$name$Service Service { get; protected set; }
+
+	#region IDisposable Support
+
+	private bool disposedValue = false; // To detect redundant calls
+
+	protected virtual void Dispose(bool disposing)
+	{
+		if (disposedValue) return;
+		if (disposing)
+		{
+			// TODO: dispose managed state (managed objects).
+			Service?.Dispose();
+		}
+
+		// TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
+		// TODO: set large fields to null.
+
+		disposedValue = true;
+	}
+
+	// TODO: override a finalizer only if Dispose(bool disposing) above has code to free unmanaged resources.
+	// ~IUserModule() {
+	//   // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
+	//   Dispose(false);
+	// }
+
+	// This code added to correctly implement the disposable pattern.
+	void IDisposable.Dispose()
+	{
+		// Do not change this code. Put cleanup code in Dispose(bool disposing) above.
+		Dispose(true);
+		// TODO: uncomment the following line if the finalizer is overridden above.
+		// GC.SuppressFinalize(this);
+	}
+
+	#endregion
+  
+		$selected$$end$
+	}]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

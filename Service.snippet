@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Service</Title>
+      <Shortcut>svc</Shortcut>
+      <Description>Code snippet for Service</Description>
+      <Author>Muneeb R. Baig</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>name</ID>
+          <ToolTip>Class name</ToolTip>
+          <Default>Service</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+using SMIS.Entities.Models;
+
+namespace SMIS.Service;
+
+public class $name$Service : Service<$name$>, I$name$Service
+{
+	public $name$Service(Repository.Pattern.DataContext.IDataContext context)
+		: base(context)
+	{
+	} 
+		$selected$$end$
+	}]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

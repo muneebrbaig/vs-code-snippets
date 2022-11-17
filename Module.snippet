@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Module</Title>
+      <Shortcut>module</Shortcut>
+      <Description>Code snippet for Module</Description>
+      <Author>Muneeb R. Baig</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>name</ID>
+          <ToolTip>Class name</ToolTip>
+          <Default>Module</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+using SMIS.Entities.Models;
+using SMIS.Service;
+
+namespace SMIS.Core;
+
+public class $name$Module : $name$ModuleBase
+{
+	public $name$Module() => Service = new $name$Service(new SMISContext());
+
+	public $name$Module(string connectionString) =>
+		Service = new $name$Service(new SMISContext(connectionString));
+  
+		$selected$$end$
+	}]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

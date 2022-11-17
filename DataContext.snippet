@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>DataContext</Title>
+      <Shortcut>dbset</Shortcut>
+      <Author>Munneb R. Baig</Author>
+      <Description>Adds boilerplate code for DataContext</Description>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <References>
+        <Reference>
+        </Reference>
+      </References>
+      <Declarations>
+        <Literal>
+          <ID>classname</ID>
+          <ToolTip>Replace with specified name</ToolTip>
+          <Default>Entity</Default>
+        </Literal>
+        <Literal>
+          <ID>entityclassname</ID>
+          <ToolTip>Replace with specified name</ToolTip>
+          <Default>Entity</Default>
+        </Literal>
+        <Object>
+          <ID>Object</ID>
+          <Type>System.Object</Type>
+          <ToolTip>Replace with an object in your application.</ToolTip>
+          <Default>myObject</Default>
+        </Object>
+      </Declarations>
+      <Code Language="CSharp">
+        <![CDATA[
+        public virtual IDbSet<$classname$> $entityclassname$ { get; set; }
+$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
